@@ -54,7 +54,7 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-/* end of reset */
+/* ==============================end of reset============================= */
 
 html {
   background-color: rgba(122, 191, 191, 0.5);
@@ -65,30 +65,76 @@ body {
   width: 414px;
   background-color: #f2f2f2;
 }
-
+/* ==============header start====================================================
+========================================================================= */
 header {
   margin-top: 200px;
 }
 
+header h1 {
+  text-align: center;
+}
+header menu {
+  display: flex;
+  justify-content: space-around;
+}
+header menu li {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+header p {
+  margin: 10px;
+  line-height: 1.3;
+}
+
+/* ==============header end====================================================
+========================================================================= */
 #nav-container {
+  position: relative;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 2fr 1fr;
   grid-template-areas:
-    "menu"
-    "search";
+    "nav-menu logo sign-in"
+    "search search search";
   position: absolute;
   top: 0;
   width: 414px;
   border: 1px solid red;
 }
 
+#nav-container > h2,
+#nav-container > h3 {
+  visibility: hidden;
+  height: 0;
+}
+
+#nav-menu {
+  grid-area: nav-menu;
+  border: 1px solid red;
+}
+
+#home {
+  grid-area: logo;
+  z-index: 2;
+  /* display: block; */
+  /* visibility: visible;
+  position: relative; */
+  border: 1px solid blue;
+}
+
+.sign-in {
+  grid-area: sign-in;
+  border: 1px solid blue;
+}
+
 /* --------------------hamburger menu --------------------------*/
-#nav-container ul {
+ul {
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.2s ease-out;
 }
-
 label {
   cursor: pointer;
   display: inline-block;
@@ -96,7 +142,6 @@ label {
   position: relative;
   user-select: none;
 }
-
 label span {
   background-color: #ffffff;
   display: block;
@@ -105,10 +150,9 @@ label span {
   transition: background-color 0.2s ease-out;
   width: 18px;
 }
-
 label span:before,
 label span:after {
-  /* background: #ffffff; */
+  background: #ffffff;
   content: "";
   display: block;
   height: 100%;
@@ -116,40 +160,32 @@ label span:after {
   transition: all 0.2s ease-out;
   width: 100%;
 }
-
 label span:before {
   top: 5px;
 }
-
 label span:after {
   top: -5px;
 }
-
 input {
   display: none;
 }
-
 input:checked ~ ul {
   max-height: 500px;
 }
-
 input:checked ~ label span {
   background: transparent;
 }
-
 input:checked ~ label span:before {
   transform: rotate(-45deg);
 }
-
 input:checked ~ label span:after {
   transform: rotate(45deg);
 }
-
 input:checked ~ label:not(.steps) span:before,
 input:checked ~ label:not(.steps) span:after {
   top: 0;
 }
-/* -------------------end hamburger menu ----------------*/
+/* =======================end hamburger menu======================*/
 
 #menu {
   grid-area: menu;
@@ -166,9 +202,6 @@ img {
 }
 
 /* change this selector later if necessary once all done */
-div > h2 {
-  display: none;
-}
 
 ul li:nth-child(1) a,
 ul li:nth-child(1) a:visited,
@@ -187,6 +220,19 @@ ul li:nth-of-type(n + 2) a:visited,
 ul li:nth-of-type(n + 2) a:hover,
 ul li:nth-of-type(n + 2) a:active {
   text-transform: uppercase;
+}
+
+ul li:last-of-type a,
+ul li:last-of-type a:visited,
+ul li:last-of-type a:hover,
+ul li:last-of-type a:active {
+  text-transform: uppercase;
+  position: absolute;
+  left: 205px;
+  top: 20px;
+  font-variant: small-caps;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 #nav-container li {
@@ -223,7 +269,7 @@ menu li {
 }
 
 .sides-container {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 3fr;
@@ -318,7 +364,7 @@ footer {
 .sides-container p,
 .sides-container img {
   margin: 0 0 0 5px;
-  border: 1px solid yellow;
+  /* border: 1px solid yellow; */
 }
 
 footer h2,
@@ -328,7 +374,7 @@ footer h3 {
 }
 
 footer {
-  border: 2px solid purple;
+  /* border: 2px solid purple; */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
@@ -374,3 +420,17 @@ ul div {
   color: #eb5428;
   text-transform: uppercase;
 }
+
+/* ====================from menu.txt ==================*/
+/* @media screen and (min-width:834px) {
+    ul {
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    label span, input {
+        display: none;
+    }
+} */
