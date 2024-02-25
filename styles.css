@@ -124,18 +124,21 @@ footer span {
 .icon-tabler-star {
   margin: 0 4px;
 }
-/* ==============header start====================================================
-========================================================================= */
+/* ==============header start=====================================
+==================================================================== */
 header {
-  margin-top: 124px;
+  margin-top: 191px;
+  z-index: 1112;
 }
 
 header h1 {
   text-align: center;
+  padding-bottom: 23px;
 }
 header menu {
   display: flex;
   justify-content: space-around;
+  padding-bottom: 10px;
 }
 
 header a span {
@@ -153,7 +156,6 @@ header a:hover,
 header a:active {
   color: #eb5428;
   text-decoration: none;
-  /* text-transform: uppercase; */
 }
 
 header a {
@@ -163,7 +165,6 @@ header a {
 }
 header menu li {
   display: flex;
-  /* flex-direction: column-reverse; */
   align-items: center;
 }
 
@@ -186,7 +187,6 @@ menu li {
 #details dl {
   display: grid;
   grid-template-columns: 100px 1fr;
-  /* border: 2px solid orange; */
 }
 #details h2 {
   text-align: center;
@@ -197,7 +197,6 @@ menu li {
 #ingredients {
   height: auto;
   width: 414px;
-  /* border: 2px solid yellow; */
   margin: 20px auto;
 }
 
@@ -216,7 +215,6 @@ menu li {
 #directions {
   height: auto;
   width: 414px;
-  /* border: 2px solid yellow; */
   margin: 20px auto;
 }
 
@@ -233,56 +231,6 @@ menu li {
 #directions li {
   padding: 10px 0;
 }
-/* ===========directions end ===================================================
-===========================================================================*/
-
-/* nav {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  grid-template-areas:
-    "nav-menu logo sign-in"
-    "search search search";
-  position: absolute;
-  top: 0;
-  width: 414px;
-  border: 1px solid red;
-} */
-
-/* #nav-menu {
-  grid-area: nav-menu;
-  border: 1px solid red;
-} */
-
-/* #home {
-  grid-area: logo;
-  z-index: 2;
-  display: block;
-  visibility: visible;
-
-  border: 1px solid blue;
-  position: fixed;
-  top: 0;
-  left: 50%;
-} */
-/* 
-.sign-in {
-  grid-area: sign-in;
-  border: 1px solid blue;
-  position: fixed;
-  top: 0;
-  right: 0;
-} */
-
-/* #menu {
-  grid-area: menu;
-} */
-
-/* #search {
-  grid-area: search;
-  border: 2px solid green;
-  height: 40px;
-} */
 
 /* ============side dishes start ===============================
 ==========================================================*/
@@ -299,7 +247,6 @@ menu li {
 }
 
 .sides-container {
-  /* border: 1px solid red; */
   display: grid;
   width: 100%;
   grid-template-columns: 1fr 3fr;
@@ -314,7 +261,6 @@ menu li {
 .sides-container p,
 .sides-container img {
   margin: 0 0 0 5px;
-  /* border: 1px solid yellow; */
 }
 
 .sides-container h3 {
@@ -352,7 +298,6 @@ nav ul {
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.2s ease-out;
-  /* border: 2px solid orange; */
 }
 
 nav a {
@@ -371,16 +316,13 @@ nav a img {
   order: 1;
 }
 
-/* #home a span {
-  visibility: hidden;
-} */
-
 nav label {
   cursor: pointer;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
   user-select: none;
-  /* border: 2px solid purple; */
   background-color: white;
   height: 84px;
   width: 84px;
@@ -389,49 +331,18 @@ nav label {
 nav label span {
   background-color: #ffffff;
   display: block;
-  /* height: 2px; */
   position: relative;
   transition: background-color 0.2s ease-out;
-  width: 18px;
-  /* border: 2px solid green; */
 }
 
-/* label span:before,
-label span:after {
-  background: #ffffff;
-  content: "";
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all 0.2s ease-out;
-  width: 100%;
-} */
-
-/* label span:before {
-  top: 5px;
-} */
-
-/* label span:after {
-  top: -5px;
-} */
-
-input {
+nav input {
   display: none;
 }
 
-input:checked ~ ul {
+nav input:checked ~ ul {
   max-height: 500px;
   background-color: white;
 }
-
-/* input:checked ~ label span {
-  background: transparent;
-} */
-
-/* input:checked ~ label:not(.steps) span:before,
-input:checked ~ label:not(.steps) span:after {
-  top: 0;
-} */
 
 nav ul li:nth-child(1) a,
 nav ul li:nth-child(1) a:visited,
@@ -440,9 +351,6 @@ nav ul li:nth-child(1) a:active {
   position: absolute;
   left: 84px;
   top: 0;
-  /* font-variant: small-caps; */
-  /* font-size: 1.5em; */
-  /* font-weight: bold; */
   width: 247px;
   height: 84px;
   background-color: #eb5428;
@@ -482,17 +390,61 @@ nav a:hover,
 nav a:active {
   color: #0d0d0d;
   text-decoration: none;
-  /* text-transform: uppercase; */
+}
+
+nav label svg,
+nav #sign-in svg {
+  margin-top: 18px;
+}
+
+nav #home svg {
+  margin-top: 10px;
+}
+
+nav #home span {
+  font-size: 0;
 }
 
 nav img {
   display: none;
 }
 
+/* =======search start ===============================================
+======================================================================*/
+form button {
+  background-color: #eb5428;
+}
+
+form fieldset {
+  visibility: hidden;
+  font-size: 0;
+}
+
+#search {
+  position: absolute;
+  top: 84px;
+  display: flex;
+  width: 414px;
+  height: 115px;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  z-index: -1;
+}
+
+#search input,
+#search button {
+  height: 45px;
+  border: 2px solid #eb5428;
+}
+
+#search input {
+  width: 265px;
+}
+
 /* =======footer start ===============================================
 ======================================================================*/
 footer {
-  /* border: 2px solid purple; */
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:
@@ -506,7 +458,6 @@ footer {
 footer {
   height: auto;
   width: 414px;
-  /* border: 2px solid yellow; */
   margin: 20px auto;
 }
 
@@ -517,7 +468,6 @@ footer h3 {
 }
 
 footer ul {
-  /* border: 2px solid green; */
   margin-top: 25px;
   display: flex;
   grid-area: social;
@@ -551,14 +501,11 @@ footer a:hover,
 footer a:active {
   color: #eb5428;
   text-decoration: none;
-  /* text-transform: uppercase; */
 }
 
 #social li {
   display: flex;
-  /* flex-direction: column-reverse; */
   align-items: center;
-  /* color: #eb5428; */
   text-transform: uppercase;
 }
 
