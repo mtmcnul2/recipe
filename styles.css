@@ -337,7 +337,6 @@ menu li {
 /* ==========hamburger menu start ============================
 ==========================================================*/
 nav {
-  /* display: grid; */
   position: absolute;
   top: 0;
   width: 414px;
@@ -350,7 +349,6 @@ nav > h3 {
 }
 
 nav ul {
-  /* position: absolute; */
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.2s ease-out;
