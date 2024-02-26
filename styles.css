@@ -340,12 +340,12 @@ nav a {
   color: #eb5428;
 }
 
-nav a span {
+nav span {
   order: 2;
 }
 
-nav a svg,
-nav a img {
+nav svg,
+nav img {
   order: 1;
 }
 
@@ -446,10 +446,6 @@ nav label svg {
   margin-top: 21px;
 }
 
-nav #sign-in svg {
-  margin-top: 18px;
-}
-
 nav #home svg {
   margin-top: 10px;
 }
@@ -460,6 +456,14 @@ nav #home span {
 
 nav img {
   display: none;
+}
+
+nav #sign-in span {
+  color: #0d0d0d;
+}
+
+#sign-in svg {
+  margin-top: 18px;
 }
 
 /* =======search start ===============================================
