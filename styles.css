@@ -517,7 +517,7 @@ footer {
 footer {
   height: auto;
   width: 414px;
-  padding: 20px auto;
+  padding: 20px 0;
 }
 
 footer h2,
@@ -527,16 +527,11 @@ footer h3 {
 }
 
 footer ul {
-  margin-top: 43px;
+  margin-top: 22px;
   display: flex;
   grid-area: social;
-  justify-content: center;
-  width: 414px;
-}
-
-footer ul {
-  display: flex;
   justify-content: space-around;
+  width: 414px;
 }
 
 #social a {
@@ -585,7 +580,7 @@ footer a:active {
 footer img {
   width: 47%;
   grid-area: footer-image;
-  margin: 15px auto;
+  margin: 14px auto;
 }
 
 .small-1 {
