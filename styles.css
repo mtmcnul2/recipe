@@ -1349,3 +1349,19 @@ footer img {
     margin: -89px 0 0 -58px;
   }
 }
+
+@media print {
+  * {
+    margin: 0.5in;
+    font-family: serif;
+    color: black;
+    stroke: black;
+    background-color: white;
+    border: black;
+  }
+
+  img, svg, nav {
+    display: none;
+  }
+
+}
